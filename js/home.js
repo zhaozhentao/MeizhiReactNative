@@ -65,14 +65,14 @@ var Home = React.createClass({
 						3 热度
 					</Text>
 					<View style={styles.card_item_border}>
-						<Image source={require('image!dashboard_reply_default') }
-							style={styles.card_bottom_img_button}/>
+						<Image source={require('image!dashboard_reply_default')}
+							style={{height: 15, resizeMode: "contain"}}/>
 					</View>
 					<Image source={require('image!selection_share_hover') }
 						style={styles.card_bottom_img_button}/>
 					<View style={styles.card_item_border}>
-						<Image source={require('image!dashboard_recommand_off_default') }
-							style={styles.card_bottom_img_button}/>
+						<Image source={require('image!dashboard_recommand_off_default')}
+							style={{height: 15, resizeMode:"contain"}}/>
 					</View>
 					<Image source={require('image!dashboard_like_on_default') }
 						style={styles.card_bottom_img_button}/>
@@ -116,8 +116,10 @@ var styles = StyleSheet.create({
 	    borderBottomRightRadius: 2,
 	},
 	card_item_border:{
+		flex: 1,
 		borderLeftWidth:lineWidth, 
 		borderRightWidth:lineWidth, 
+		alignItems:"center",
 		paddingTop:12, 
 		paddingBottom: 12,
 		borderColor:"#dcdcdc"	
