@@ -54,3 +54,8 @@ android/.idea/libraries/drawee_0_6_1.xml
 android/.idea/libraries/fbcore_0_6_1.xml
 android/.idea/libraries/fresco_0_6_1.xml
 android/.idea/libraries/imagepipeline_0_6_1.xml
+cache.properties.lock
+fileHashes.bin
+outputFileStates.bin
+fileSnapshots.bin
+taskArtifacts.bin
