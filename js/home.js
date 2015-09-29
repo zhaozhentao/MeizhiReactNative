@@ -9,6 +9,7 @@ var{
 	StyleSheet,
 	Image,
 } = React;
+var lineWidth = 0.4;
 
 var Home = React.createClass({
 	getInitialState: function(){
@@ -21,7 +22,7 @@ var Home = React.createClass({
 		};
 	},
 	componentWillMount: function(){
-		this.fetchData('http://gank.avosapps.com/api/data/福利/10/1');
+		this.fetchData('http://gank.avosapps.com/api/data/福利/20/1');
 	},
 	render: function(){
 		return (
@@ -54,23 +55,27 @@ var Home = React.createClass({
 			<View>
 				<View style={styles.card}>
 					<Image source={{uri: rowData.url}}
-						style={{height: 300}}/>
+						style={{height: 400}}/>
 					<Text style={styles.card_name}>
 						{rowData.who}
 					</Text>
 				</View>
 				<View style={styles.card_bottom_bar}>
-					<Text style={[styles.card_item, {textAlign:"center", marginTop:10, marginBottom: 10, flex: 2}]}>
+					<Text style={[styles.card_item, {textAlign:"center", flex: 2}]}>
 						3 热度
 					</Text>
-					<Image source={require('image!dashboard_reply_default') }
-						style={{resizeMode:"contain", flex: 1, height: 30}}/>
+					<View style={styles.card_item_border}>
+						<Image source={require('image!dashboard_reply_default') }
+							style={styles.card_bottom_img_button}/>
+					</View>
 					<Image source={require('image!selection_share_hover') }
-						style={{resizeMode:"contain", flex: 1, height: 30}}/>
-					<Image source={require('image!dashboard_recommand_off_default') }
-						style={{resizeMode:"contain", flex: 1, height: 30}}/>
+						style={styles.card_bottom_img_button}/>
+					<View style={styles.card_item_border}>
+						<Image source={require('image!dashboard_recommand_off_default') }
+							style={styles.card_bottom_img_button}/>
+					</View>
 					<Image source={require('image!dashboard_like_on_default') }
-						style={{resizeMode:"contain", flex: 1, height: 30}}/>																				
+						style={styles.card_bottom_img_button}/>
 				</View>
 			</View>
 		)
@@ -110,6 +115,18 @@ var styles = StyleSheet.create({
 	    borderBottomLeftRadius: 2, 
 	    borderBottomRightRadius: 2,
 	},
+	card_item_border:{
+		borderLeftWidth:lineWidth, 
+		borderRightWidth:lineWidth, 
+		paddingTop:12, 
+		paddingBottom: 12,
+		borderColor:"#dcdcdc"	
+	},
+	card_bottom_img_button:{
+		resizeMode:"contain", 
+		flex: 1, 
+		height: 15,
+	}
 });
 
 module.exports = Home;
