@@ -10,6 +10,7 @@ var {
   Image,
   Text,
   View,
+  TouchableNativeFeedback,
 } = React;
 
 var MeizhiReactNative = React.createClass({
@@ -22,11 +23,31 @@ var MeizhiReactNative = React.createClass({
               style={styles.toolbar}/>
               <Home/>
               <View style={styles.tab_bar}>
-                <Image style={styles.tab_btn} source={require('image!bb_btn_home_select')}/>
-                <Image style={styles.tab_btn} source={require('image!bb_btn_label_select')}/>
-                <Image style={styles.tab_btn} source={require('image!bb_btn_post_select2')}/>
-                <Image style={styles.tab_btn} source={require('image!bb_btn_message_select')}/>
-                <Image style={styles.tab_btn} source={require('image!bb_btn_account_select')}/>
+                <TouchableNativeFeedback>
+                  <View style={styles.tab_btn}>
+                    <Image style={styles.tab_img} source={require('image!bb_btn_home_select')}/>
+                  </View>
+                </TouchableNativeFeedback>
+                <TouchableNativeFeedback>
+                  <View style={styles.tab_btn}>
+                    <Image style={styles.tab_img} source={require('image!bb_btn_label_select')}/>
+                  </View>
+                </TouchableNativeFeedback>
+                <TouchableNativeFeedback>
+                  <View style={[styles.tab_btn, {backgroundColor: "#8dbe05"}]}>
+                    <Image style={styles.tab_img} source={require('image!bb_btn_post_select2')}/>
+                  </View>
+                </TouchableNativeFeedback>
+                <TouchableNativeFeedback>
+                  <View style={styles.tab_btn}>
+                    <Image style={styles.tab_img} source={require('image!bb_btn_message_select')}/>
+                  </View>
+                </TouchableNativeFeedback>
+                <TouchableNativeFeedback>
+                  <View style={styles.tab_btn}>
+                    <Image style={styles.tab_img} source={require('image!bb_btn_account_select')}/>
+                  </View>
+                </TouchableNativeFeedback>                                                
               </View>
           </View>
     );
@@ -51,7 +72,11 @@ var styles = StyleSheet.create({
   },
   tab_btn:{
     flex: 1,
-    height: 40,
+    height: 54,
+    alignItems: "center",
+  },
+  tab_img:{
+    height: 54,
     resizeMode: 'contain',
   },
 });

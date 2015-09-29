@@ -96,7 +96,7 @@ var styles = StyleSheet.create({
 	    borderTopRightRadius: 2,
 	},
 	card_name: {
-		fontSize: 18,
+		fontSize: 14,
 		margin: 10,
 	},
 	card_bottom_bar: {
