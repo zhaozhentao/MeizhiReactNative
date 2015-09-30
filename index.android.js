@@ -3,6 +3,7 @@
 var React = require('react-native');
 var Home = require('./js/home');
 var ToolbarAndroid = require('ToolbarAndroid');
+var ToastAndroid = require('ToastAndroid');
 
 var {
   AppRegistry,
@@ -14,6 +15,9 @@ var {
 } = React;
 
 var MeizhiReactNative = React.createClass({
+  tab_press(){
+    ToastAndroid.show('只有界面没有交互~~', ToastAndroid.LONG);
+  },
   render: function() {
     return (
           <View style={styles.container}>
@@ -21,34 +25,39 @@ var MeizhiReactNative = React.createClass({
               title="Lofter"
               titleColor="white"
               style={styles.toolbar}/>
-              <Home/>
-              <View style={styles.tab_bar}>
-                <TouchableNativeFeedback>
-                  <View style={styles.tab_btn}>
-                    <Image style={styles.tab_img} source={require('image!bb_btn_home_select')}/>
-                  </View>
-                </TouchableNativeFeedback>
-                <TouchableNativeFeedback>
-                  <View style={styles.tab_btn}>
-                    <Image style={styles.tab_img} source={require('image!bb_btn_label_select')}/>
-                  </View>
-                </TouchableNativeFeedback>
-                <TouchableNativeFeedback>
-                  <View style={[styles.tab_btn, {backgroundColor: "#8dbe05"}]}>
-                    <Image style={styles.tab_img} source={require('image!bb_btn_post_select2')}/>
-                  </View>
-                </TouchableNativeFeedback>
-                <TouchableNativeFeedback>
-                  <View style={styles.tab_btn}>
-                    <Image style={styles.tab_img} source={require('image!bb_btn_message_select')}/>
-                  </View>
-                </TouchableNativeFeedback>
-                <TouchableNativeFeedback>
-                  <View style={styles.tab_btn}>
-                    <Image style={styles.tab_img} source={require('image!bb_btn_account_select')}/>
-                  </View>
-                </TouchableNativeFeedback>                                                
-              </View>
+            <Home/>
+            <View style={styles.tab_bar}>
+              <TouchableNativeFeedback 
+                onPress={()=>this.tab_press()}>
+                <View style={styles.tab_btn}>
+                  <Image style={styles.tab_img} source={require('image!bb_btn_home_select')}/>
+                </View>
+              </TouchableNativeFeedback>
+              <TouchableNativeFeedback
+                onPress={()=>this.tab_press()}>
+                <View style={styles.tab_btn}>
+                  <Image style={styles.tab_img} source={require('image!bb_btn_label_select')}/>
+                </View>
+              </TouchableNativeFeedback>
+              <TouchableNativeFeedback
+                onPress={()=>this.tab_press()}>
+                <View style={[styles.tab_btn, {backgroundColor: "#8dbe05"}]}>
+                  <Image style={styles.tab_img} source={require('image!bb_btn_post_select2')}/>
+                </View>
+              </TouchableNativeFeedback>
+              <TouchableNativeFeedback
+                onPress={()=>this.tab_press()}>
+                <View style={styles.tab_btn}>
+                  <Image style={styles.tab_img} source={require('image!bb_btn_message_select')}/>
+                </View>
+              </TouchableNativeFeedback>
+              <TouchableNativeFeedback
+                onPress={()=>this.tab_press()}>
+                <View style={styles.tab_btn}>
+                  <Image style={styles.tab_img} source={require('image!bb_btn_account_select')}/>
+                </View>
+              </TouchableNativeFeedback>                                                
+            </View>
           </View>
     );
   }
